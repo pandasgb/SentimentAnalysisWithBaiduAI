@@ -9,7 +9,7 @@ import re
 # 获取AT类
 class GetAccessToken:
     def __init__(self):
-        # 输入自己在百度AI控制台申请应用后获得的AK和SK
+        # 【修改点1】输入自己在百度AI控制台申请应用后获得的AK和SK
         self.AK = ''
         self.SK = ''
         self.token_url = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id='+self.AK+'&client_secret='+self.SK
@@ -107,7 +107,7 @@ class SentimentBaidu:
         ATclass = GetAccessToken()
         AT = ATclass.get_access_token()
         print('progress start current speed = ', self.sleepdt)
-        # 以下4行为获取文本，可选择自己常用的方式，将所有文本待分析文本放到一个iterator中，这里使用的pandas读取文本
+        # 【修改点3】以下4行为获取文本，可选择自己常用的方式，将所有文本待分析文本放到一个iterator中，这里使用的pandas读取文本
         contentalldf = self.get_comment_ori(self.textpath)
         commentcontent = contentalldf['commentContent']
         commentcontent = pd.DataFrame(commentcontent)
@@ -149,6 +149,6 @@ class SentimentBaidu:
 
 
 if __name__=='__main__':
-    tp = '' # 修改为自己的文本存储的文件夹位置
+    tp = '' # 【修改点2】修改为自己的文本存储的文件夹位置
     runner = SentimentBaidu(tp)
     runner.run()
