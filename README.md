@@ -1,0 +1,2 @@
+# SentimentAnalysisWithBaiduAI
+本项目介绍如何使用百度AI进行情感分析，其他自然语言处理类百度AI接口类似，换API即可使用
